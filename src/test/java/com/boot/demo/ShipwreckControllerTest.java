@@ -36,7 +36,6 @@ public class ShipwreckControllerTest {
         Shipwreck data = shipwreckController.get(1L);
         verify(shipwreckRepository).findOne(1L);
 
-//        Assert.assertEquals(1L, data.getId().longValue());
         MatcherAssert.assertThat(data.getId(), Is.is(1L));
     }
 }

@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class ShipwreckRepositoryIntegrationTest {
 
     @Autowired
@@ -25,6 +25,5 @@ public class ShipwreckRepositoryIntegrationTest {
         List<Shipwreck> shipwrecks = shipwreckRepository.findAll();
         MatcherAssert.assertThat(shipwrecks.size(), Is.is(Matchers.greaterThanOrEqualTo(0)));
     }
-
 
 }
